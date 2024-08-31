@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    restAssuredVersion = '5.5.0'
+    testNgVersion = '7.7.1'
+    jacksonDataBindVersion = '2.16.1'
+    gsonVersion = '2.10.1'
+    extentReportVersion = '5.0.9'
+    lombokVersion = '1.18.34'
+    apacheCommonsVersion = '3.12.0'
+}
+
+dependencies {
+    testImplementation "io.rest-assured:rest-assured:${restAssuredVersion}"
+    testImplementation "org.testng:testng:${testNgVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonDataBindVersion}"
+    implementation "com.google.code.gson:gson:${gsonVersion}"
+    implementation "com.aventstack:extentreports:${extentReportVersion}"
+    implementation "org.projectlombok:lombok:${lombokVersion}"
+    implementation "org.apache.commons:commons-lang3:${apacheCommonsVersion}"
+
+}
+
+test {
+    useTestNG()
+}
